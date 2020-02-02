@@ -1,26 +1,23 @@
 ﻿Module Module1
 
     Sub Main()
-        Dim more As Char
         Dim memID As String
         Dim memName As String
-        more = ""
+        Dim more As Char
         memID = ""
         memName = ""
-        FileOpen(1, "C:\Users\Abubakar\Documents.txt", OpenMode.Output)
-        Do
-            Console.WriteLine("enter member name")
-            memName = Console.ReadLine
-            Console.WriteLine("enter member id")
-            memID = Console.ReadLine
-            WriteLine(1, memName)
-            WriteLine(1, memID)
-            Console.WriteLine("do you want to enter more then press y")
-            more = Console.ReadLine
+        more = ""
+        FileOpen(1, "C:\Users\Abubakar\Documents.txt", OpenMode.Input)
+        While Not EOF(1)
+            Input(1, memName)
+            Input(1, memID)
+            Console.WriteLine("membername :" & memName)
+            Console.WriteLine("memid :" & memID)
 
-        Loop Until more = "n" Or more = "N"
-        FileClose(1)
+        End While
+            FileClose(1)
 
+        Console.ReadKey()
 
     End Sub
 
